@@ -1,0 +1,7 @@
+info:
+  name: user flow create support ticket
+  type: folder
+  seq: 4
+
+request:
+  auth: inherit

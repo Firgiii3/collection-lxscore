@@ -1,0 +1,30 @@
+info:
+  name: support ticket message
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/public/support-tickets/581d930f-97b6-4d55-acd3-4b2f48680246/messages"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"message\": \"Saya sudah coba logout dan login lagi, tapi point tetap belum masuk.\",\r
+
+      \  \"attachment\": [\r
+
+      \    \"support-ticket/2026/06/25/reply-point-error-1.png\"\r
+
+      \  ]\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{user_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

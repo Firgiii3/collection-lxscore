@@ -1,0 +1,54 @@
+info:
+  name: register
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base_url}}/v1/public/auth/register"
+  headers:
+    - name: X-Organization
+      value: "{{organization_id}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\": \"testsss\",\r
+
+      \    \"email\": \"testingsanity4@gmail.com\",\r
+
+      \    \"password\": \"testing123\",\r
+
+      \    \"referral_code\": \"\"\r
+
+      }"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Register success\", function () {\r
+
+        \    expect(res.getStatus()).to.be.oneOf([200, 201]);\r
+
+        });\r
+
+        \r
+
+        const jsonData = res.getBody();\r
+
+        \r
+
+        // kalau response register juga return organization_id, simpan ulang\r
+
+        if (jsonData.data && jsonData.data.organization_id) {\r
+
+        \    bru.setEnvVar(\"organization_id\", jsonData.data.organization_id);\r
+
+        }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

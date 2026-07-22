@@ -1,0 +1,35 @@
+info:
+  name: update profile user
+  type: http
+  seq: 1
+
+http:
+  method: PUT
+  url: "{{base_url}}/v1/public/match?organization_id={{organization_id}}&name&phone&avatar_url"
+  params:
+    - name: organization_id
+      value: "{{organization_id}}"
+      type: query
+    - name: name
+      value: ""
+      type: query
+    - name: phone
+      value: ""
+      type: query
+    - name: avatar_url
+      value: ""
+      type: query
+  auth:
+    type: bearer
+    token: "{{user_token}}"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: req.setHeader("X-Organization", bru.getEnvVar("organization_id"));
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

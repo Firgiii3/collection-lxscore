@@ -1,0 +1,47 @@
+opencollection: 1.0.0
+
+info:
+  name: Collection Lxscore
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  variables:
+    - name: base_url
+      value: https://staging-livesport-api.lxscore.com
+    - name: organization_id
+      value: dc2701bc-49cc-4711-8357-a69432a0d176
+    - name: user_token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0aW5nc2FuaXR5MUBnbWFpbC5jb20iLCJhdWQiOlsiTGl2ZXNwb3J0IFB1YmxpYyIsImRjMjcwMWJjLTQ5Y2MtNDcxMS04MzU3LWE2OTQzMmEwZDE3NiJdLCJleHAiOjE3ODQwMjQxOTMsIm5iZiI6MTc4NDAyMDU5MywiaWF0IjoxNzg0MDIwNTkzLCJqdGkiOiI2ZjNjMTc2MC00MTAyLTQ1OTktYmFkYy01NTNiNWJkMjdhN2YifQ.I07dj2M-8CkkDWzTGYRMuRzbIq5E9vQdNAvsd8M12c4
+    - name: user_refresh_token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0aW5nc2FuaXR5MUBnbWFpbC5jb20iLCJhdWQiOlsiTGl2ZXNwb3J0IFB1YmxpYyIsImRjMjcwMWJjLTQ5Y2MtNDcxMS04MzU3LWE2OTQzMmEwZDE3NiJdLCJleHAiOjE3ODY2MTI1OTMsIm5iZiI6MTc4NDAyMDU5MywiaWF0IjoxNzg0MDIwNTkzLCJqdGkiOiI2NTdkYTc4ZC1lOTdhLTQ3NTQtYWFkMS04MDczNzViMWI3YzcifQ.CxUxdZZXqu-ZDfr8y9akICXmde7EJaYKG0G1GZNeuFU
+
+docs:
+  content: |-
+    ### Welcome to Postman! This is your first collection. 
+
+    Collections are your starting point for building and testing APIs. You can use this one to:
+
+    • Group related requests
+    • Test your API in real-world scenarios
+    • Document and share your requests
+
+    Update the name and overview whenever you’re ready to make it yours.
+
+    [Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)
+  type: text/markdown
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

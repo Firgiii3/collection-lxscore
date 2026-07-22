@@ -1,0 +1,7 @@
+info:
+  name: 05. Redeem Point
+  type: folder
+  seq: 5
+
+request:
+  auth: inherit

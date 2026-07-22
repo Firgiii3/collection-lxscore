@@ -1,0 +1,32 @@
+info:
+  name: submit quiz
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/public/match_order/quiz"
+  body:
+    type: json
+    data: "[\r
+
+      {\r
+
+      \    \"match_order_id\":\"\",\r
+
+      \    \"home_team_prediction_score\":\"\",\r
+
+      \    \"away_team_prediction_score\":\"\"\r
+
+      }\r
+
+      ]"
+  auth:
+    type: bearer
+    token: "{{user_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

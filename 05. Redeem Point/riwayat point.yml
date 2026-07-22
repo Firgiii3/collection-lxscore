@@ -1,0 +1,36 @@
+info:
+  name: riwayat point
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/public/claim-rewards?organization_id={{organization_id}}?status=pending"
+  params:
+    - name: organization_id
+      value: "{{organization_id}}?status=pending"
+      type: query
+  body:
+    type: json
+    data: "[\r
+
+      {\r
+
+      \    \"match_order_id\":\"\",\r
+
+      \    \"home_team_prediction_score\":\"\",\r
+
+      \    \"away_team_prediction_score\":\"\"\r
+
+      }\r
+
+      ]"
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

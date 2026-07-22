@@ -1,0 +1,26 @@
+info:
+  name: Close Support Ticket
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{base_url}}/v1/internal/support-tickets/581d930f-97b6-4d55-acd3-4b2f48680246/close"
+  body:
+    type: json
+    data: "{\r
+
+      \  \"message\": \"Kami dari internal akan bantu cek issue ini.\",\r
+
+      \  \"attachment\": []\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{internal_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

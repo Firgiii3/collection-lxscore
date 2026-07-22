@@ -1,0 +1,60 @@
+info:
+  name: login client
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/v1/client/auth/login"
+  headers:
+    - name: X-Organization
+      value: "{{organization_id}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"email\": \"client@lxscore.com\",\r
+
+      \    \"password\": \"12345678\"\r
+
+      }"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Login Client success\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        const jsonData = res.getBody();\r
+
+        \r
+
+        const clientToken =\r
+
+        \    jsonData.data?.token ||\r
+
+        \    jsonData.data?.access_token ||\r
+
+        \    jsonData.token;\r
+
+        \r
+
+        expect(clientToken, \"Client token tidak ditemukan di response\").to.exist;\r
+
+        \r
+
+        // Simpan ke Environment\r
+
+        bru.setEnvVar(\"token_client\", clientToken);"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

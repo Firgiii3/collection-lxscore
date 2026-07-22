@@ -1,0 +1,7 @@
+info:
+  name: client api support ticket
+  type: folder
+  seq: 2
+
+request:
+  auth: inherit

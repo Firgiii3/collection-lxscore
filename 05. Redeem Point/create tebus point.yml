@@ -1,0 +1,42 @@
+info:
+  name: create tebus point
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/api/claim-rewards?organization_id={{organization_id}}?status=pending"
+  params:
+    - name: organization_id
+      value: "{{organization_id}}?status=pending"
+      type: query
+  body:
+    type: json
+    data: "[\r
+
+      {\r
+
+      \  \"email\": \"\",\r
+
+      \  \"currency\": \"number\",\r
+
+      \  \"point\": \"number\",\r
+
+      \  \"brand_id\": \"string\",\r
+
+      \  \"note\": \"string\",\r
+
+      \  \"brand_account_id\": \"string\"\r
+
+      }\r
+
+      ]"
+  auth:
+    type: bearer
+    token: "{{user_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

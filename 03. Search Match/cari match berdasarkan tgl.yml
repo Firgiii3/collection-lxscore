@@ -1,0 +1,35 @@
+info:
+  name: cari match berdasarkan tgl
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/public/match?organization_id={{organization_id}}&start_time=2026-07-21T00:00:00+07:00&end_time=2026-07-22T00:00:00+07:00&limit="
+  params:
+    - name: organization_id
+      value: "{{organization_id}}"
+      type: query
+    - name: start_time
+      value: 2026-07-21T00:00:00+07:00
+      type: query
+    - name: end_time
+      value: 2026-07-22T00:00:00+07:00
+      type: query
+    - name: limit
+      value: ""
+      type: query
+  auth:
+    type: bearer
+    token: "{{user_token}}"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: req.setHeader("X-Organization", bru.getEnvVar("organization_id"));
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,38 @@
+info:
+  name: create support ticket
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/v1/public/support-tickets"
+  body:
+    type: json
+    data: "{\r
+
+      \r
+
+      \"topic\": \"livestreaming\",\r
+
+      \"title\": \"Point belum masuk\",\r
+
+      \  \"description\": \"Saya sudah menonton match Portugal vs Uzbekistan, tapi point belum bertambah.\",\r
+
+      \  \"attachment\": [\r
+
+      \    \"support-ticket/2026/06/25/point-error-1.png\",\r
+
+      \    \"support-ticket/2026/06/25/point-error-2.png\"\r
+
+      \  ],\r
+
+      \  \"reference_ticket_id\": \"9a72c5f5-6e3a-43a3-8e96-40a8c35c4e91\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

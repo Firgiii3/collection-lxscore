@@ -1,0 +1,7 @@
+info:
+  name: internal api support ticket
+  type: folder
+  seq: 3
+
+request:
+  auth: inherit
