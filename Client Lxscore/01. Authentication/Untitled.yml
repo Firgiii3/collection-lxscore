@@ -1,0 +1,57 @@
+info:
+  name: Untitled
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/v1/client/auth/login"
+  body:
+    type: json
+    data: |-
+      {
+      "email": "client@lxscore.com",
+      "password": "12345678",
+      "login_type": "user"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const jsonData = res.getBody();
+
+        // Simpan access_token ke variable "client_token"
+        if (jsonData.data && jsonData.data.access_token) {
+          bru.setVar("client_token", jsonData.data.access_token);
+          console.log("client_token berhasil disimpan:", jsonData.data.access_token);
+        } else {
+          console.warn("access_token tidak ditemukan di response!");
+        }
+
+        // (Optional) simpan juga refresh_token
+        if (jsonData.data && jsonData.data.refresh_token) {
+          bru.setVar("client_refresh_token", jsonData.data.refresh_token);
+        }
+    - type: tests
+      code: |-
+        test("Status code is 200", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+        test("Response success is true", function () {
+          const jsonData = res.getBody();
+          expect(jsonData.success).to.equal(true);
+        });
+
+        test("access_token exists and is a string", function () {
+          const jsonData = res.getBody();
+          expect(jsonData.data.access_token).to.be.a("string");
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
