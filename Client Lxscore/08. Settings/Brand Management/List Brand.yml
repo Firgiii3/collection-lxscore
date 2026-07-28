@@ -1,0 +1,28 @@
+info:
+  name: List Brand
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/client/setting/brand?limit=10& organization_id=dc2701bc-49cc-4711-8357-a69432a0d176"
+  headers:
+    - name: X-organization
+      value: dc2701bc-49cc-4711-8357-a69432a0d176
+      disabled: true
+  params:
+    - name: limit
+      value: "10"
+      type: query
+    - name: " organization_id"
+      value: dc2701bc-49cc-4711-8357-a69432a0d176
+      type: query
+  auth:
+    type: bearer
+    token: "{{client_token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
