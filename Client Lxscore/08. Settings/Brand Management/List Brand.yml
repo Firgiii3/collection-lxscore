@@ -5,17 +5,17 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}/v1/client/setting/brand?limit=10& organization_id=dc2701bc-49cc-4711-8357-a69432a0d176"
+  url: "{{base_url}}/v1/client/setting/brand?organization_id=dc2701bc-49cc-4711-8357-a69432a0d176&limit=5"
   headers:
     - name: X-organization
       value: dc2701bc-49cc-4711-8357-a69432a0d176
       disabled: true
   params:
-    - name: limit
-      value: "10"
-      type: query
-    - name: " organization_id"
+    - name: organization_id
       value: dc2701bc-49cc-4711-8357-a69432a0d176
+      type: query
+    - name: limit
+      value: "5"
       type: query
   auth:
     type: bearer

@@ -1,0 +1,21 @@
+info:
+  name: list match public
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/public/match/ongoing/comprehensive"
+  body:
+    type: json
+    data: |-
+      {
+          "organization_id": "dc2701bc-49cc-4711-8357-a69432a0d176"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

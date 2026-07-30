@@ -1,0 +1,25 @@
+info:
+  name: Get Popular Live Match
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/client/live-match/popular?limit=&start_date=&end_date="
+  params:
+    - name: limit
+      value: ""
+      type: query
+    - name: start_date
+      value: ""
+      type: query
+    - name: end_date
+      value: ""
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
