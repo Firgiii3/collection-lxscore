@@ -1,0 +1,31 @@
+info:
+  name: Get Client Stream
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/client/stream?page=&limit=&start_time=&end_time=&match="
+  params:
+    - name: page
+      value: ""
+      type: query
+    - name: limit
+      value: ""
+      type: query
+    - name: start_time
+      value: ""
+      type: query
+    - name: end_time
+      value: ""
+      type: query
+    - name: match
+      value: ""
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

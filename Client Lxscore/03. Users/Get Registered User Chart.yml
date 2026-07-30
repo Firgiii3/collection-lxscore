@@ -1,0 +1,22 @@
+info:
+  name: Get Registered User Chart
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/internal/registered/chart?start_date=&end_date="
+  params:
+    - name: start_date
+      value: ""
+      type: query
+    - name: end_date
+      value: ""
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

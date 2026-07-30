@@ -1,0 +1,34 @@
+info:
+  name: Get Claim Request Overview
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/client/claim-rewards/analytics?search=&brand_id=&sort_by=&sort_direction=&start_date=&end_date="
+  params:
+    - name: search
+      value: ""
+      type: query
+    - name: brand_id
+      value: ""
+      type: query
+    - name: sort_by
+      value: ""
+      type: query
+    - name: sort_direction
+      value: ""
+      type: query
+    - name: start_date
+      value: ""
+      type: query
+    - name: end_date
+      value: ""
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

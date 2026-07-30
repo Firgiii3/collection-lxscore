@@ -1,0 +1,24 @@
+info:
+  name: Create Match Request
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/v2/client/match-request"
+  body:
+    type: json
+    data: |-
+      {
+        "organization_id": 1234-1,
+        "match": array,
+        "match_id": string,
+        "mrketing_boost" boolean,
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

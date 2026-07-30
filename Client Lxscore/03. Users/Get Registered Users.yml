@@ -1,0 +1,34 @@
+info:
+  name: Get Registered Users
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/client/users/registered-user?limit=&cursor=&search=&sort_by=&sort_order=&page="
+  params:
+    - name: limit
+      value: ""
+      type: query
+    - name: cursor
+      value: ""
+      type: query
+    - name: search
+      value: ""
+      type: query
+    - name: sort_by
+      value: ""
+      type: query
+    - name: sort_order
+      value: ""
+      type: query
+    - name: page
+      value: ""
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

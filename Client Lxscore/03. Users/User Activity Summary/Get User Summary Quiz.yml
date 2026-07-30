@@ -1,0 +1,15 @@
+info:
+  name: Get User Summary Quiz
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/client/users/{publicUserId}/quiz"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
