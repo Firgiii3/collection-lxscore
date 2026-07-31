@@ -1,0 +1,30 @@
+info:
+  name: Update Daily Login Config
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base_url}}/v1/client/daily-login-configs/{id}"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "",
+        "start_date": "",
+        "end_date": "",
+        "total_days": 0,
+        "rewards": [
+          {
+            "day": 0,
+            "point": 0
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

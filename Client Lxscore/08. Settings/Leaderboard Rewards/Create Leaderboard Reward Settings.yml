@@ -1,0 +1,49 @@
+info:
+  name: Create Leaderboard Reward Settings
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/v1/client/setting/leaderboard/reward"
+  body:
+    type: json
+    data: |-
+      {
+        "organization_id": "string",
+        "weekly": [
+          {
+            "rank": 1,
+            "point_reward": 100
+          },
+          {
+            "rank": 2,
+            "point_reward": 75
+          },
+          {
+            "rank": 3,
+            "point_reward": 50
+          }
+        ],
+        "monthly": [
+          {
+            "rank": 1,
+            "point_reward": 500
+          },
+          {
+            "rank": 2,
+            "point_reward": 300
+          },
+          {
+            "rank": 3,
+            "point_reward": 200
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

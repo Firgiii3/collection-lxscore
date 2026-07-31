@@ -1,0 +1,39 @@
+info:
+  name: Update Point System Settings
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{base_url}}/v1/client/setting/point"
+  body:
+    type: json
+    data: |-
+      {
+        "organization_id": "string",
+        "watching_time_point": 0,
+        "watching_time_unit": 0,
+        "surprise_box_point": 0,
+        "respond_quiz_point": 0,
+        "currency": 0,
+        "cs_wa": "string",
+        "registration_point": 0,
+        "referral_point": 0,
+        "claim_request_min_point": 0,
+        "claim_request_advice": "string",
+        "approved_claim_request_notification": "string",
+        "claim_request_reminder_interval": 0,
+        "claim_request_reminder_text": "string",
+        "rank_change_reminder_text": "string",
+        "new_user_max_accumulate_point_threshold": 0,
+        "new_user_watching_time_point": 0,
+        "max_point_watching_time": 0,
+        "new_user_max_point_watching_time": 0
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

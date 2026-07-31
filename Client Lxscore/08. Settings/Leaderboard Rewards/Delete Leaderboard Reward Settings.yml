@@ -1,0 +1,21 @@
+info:
+  name: Delete Leaderboard Reward Settings
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{base_url}}/v1/client/setting/leaderboard/reward"
+  body:
+    type: json
+    data: |-
+      { 
+        "ids":
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

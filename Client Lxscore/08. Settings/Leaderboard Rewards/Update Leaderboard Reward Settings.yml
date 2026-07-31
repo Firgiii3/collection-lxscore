@@ -1,0 +1,58 @@
+info:
+  name: Update Leaderboard Reward Settings
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{base_url}}/v1/client/setting/leaderboard/reward"
+  body:
+    type: json
+    data: |-
+      {
+        "data": [
+          {
+            "id": 1,
+            "period": "weekly",
+            "rank": 1,
+            "point_reward": 100
+          },
+          {
+            "id": 2,
+            "period": "weekly",
+            "rank": 2,
+            "point_reward": 75
+          },
+          {
+            "id": 3,
+            "period": "weekly",
+            "rank": 3,
+            "point_reward": 50
+          },
+          {
+            "id": 4,
+            "period": "monthly",
+            "rank": 1,
+            "point_reward": 500
+          },
+          {
+            "id": 5,
+            "period": "monthly",
+            "rank": 2,
+            "point_reward": 300
+          },
+          {
+            "id": 6,
+            "period": "monthly",
+            "rank": 3,
+            "point_reward": 200
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,30 @@
+info:
+  name: Create Daily Login Config
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base_url}}/v1/client/daily-login-configs"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "string",
+        "start_date": "2026-07-31",
+        "end_date": "2026-08-31",
+        "total_days": 30,
+        "rewards": [
+          {
+            "day": 1,
+            "point": 0
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

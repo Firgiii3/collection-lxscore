@@ -1,0 +1,22 @@
+info:
+  name: Daily Login Configs
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/client/daily-login-configs?limit=&number="
+  params:
+    - name: limit
+      value: ""
+      type: query
+    - name: number
+      value: ""
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
