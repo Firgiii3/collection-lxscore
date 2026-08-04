@@ -1,0 +1,31 @@
+info:
+  name: Internal Stream
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/internal/stream?start_time=&end_time=&limit=&team_id=&visibility=stream"
+  params:
+    - name: start_time
+      value: ""
+      type: query
+    - name: end_time
+      value: ""
+      type: query
+    - name: limit
+      value: ""
+      type: query
+    - name: team_id
+      value: ""
+      type: query
+    - name: visibility
+      value: stream
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

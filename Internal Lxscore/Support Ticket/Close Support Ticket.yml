@@ -1,0 +1,15 @@
+info:
+  name: Close Support Ticket
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{base_url}}/v1/internal/support-tickets/{id}/close"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

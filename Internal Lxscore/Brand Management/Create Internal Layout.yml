@@ -1,0 +1,26 @@
+info:
+  name: Create Internal Layout
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/v1/internal/layout"
+  body:
+    type: json
+    data: |2-
+       {
+        image_url: string
+        organization_id: string
+        top: number
+        left: number
+        width: number
+        height: number
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,32 @@
+info:
+  name: Update Feed
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{base_url}}/v1/internal/feed/{id}"
+  body:
+    type: json
+    data: |-
+      {
+        "organization_id": "string",
+        "status": "publish",
+        "category_id": "string",
+        "published_at": "2026-08-03T17:00:00Z",
+        "contents": [
+          {
+            "title": "string",
+            "content": "string",
+            "thumbnail": "string",
+            "video": "string"
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

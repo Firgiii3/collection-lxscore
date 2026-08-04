@@ -1,0 +1,19 @@
+info:
+  name: Internal Layout By OrganizationId
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/internal/layout?organization_id="
+  params:
+    - name: organization_id
+      value: ""
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

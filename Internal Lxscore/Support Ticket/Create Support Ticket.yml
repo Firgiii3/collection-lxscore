@@ -1,0 +1,22 @@
+info:
+  name: Create Support Ticket
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base_url}}/v1/internal/support-tickets/{id}/messages"
+  body:
+    type: json
+    data: |-
+      {
+        "message": "string",
+        "attachment": "string[]"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,28 @@
+info:
+  name: Update Internal Layout
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{base_url}}/v1/internal/layout/{id}?organization_id="
+  params:
+    - name: organization_id
+      value: ""
+      type: query
+  body:
+    type: json
+    data: |-
+      {
+        top: number
+        left: number
+        width: number
+        height: number
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

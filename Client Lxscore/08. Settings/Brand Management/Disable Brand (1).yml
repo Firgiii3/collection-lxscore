@@ -10,7 +10,7 @@ http:
     type: json
     data: |-
       {
-        "name": "string",
+        "name": "lxtoto",
         "website": "string",
         "description": "string",
         "organization_id": "string"

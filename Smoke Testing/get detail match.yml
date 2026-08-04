@@ -1,0 +1,26 @@
+info:
+  name: get detail match
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/public/match/ongoing/summary?organization_id={{organization_id}}"
+  params:
+    - name: organization_id
+      value: "{{organization_id}}"
+      type: query
+  auth:
+    type: bearer
+    token: "{{user_token}}"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: req.setHeader("X-Organization", bru.getEnvVar("organization_id"));
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

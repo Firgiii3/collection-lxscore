@@ -1,0 +1,34 @@
+info:
+  name: Support Ticket
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/internal/support-tickets?organization_id=&status=&user=&Date=&limit=&next="
+  params:
+    - name: organization_id
+      value: ""
+      type: query
+    - name: status
+      value: ""
+      type: query
+    - name: user
+      value: ""
+      type: query
+    - name: Date
+      value: ""
+      type: query
+    - name: limit
+      value: ""
+      type: query
+    - name: next
+      value: ""
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,25 @@
+info:
+  name: External Logs
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/internal/claim-rewards/external-logs?limit=&next=&search="
+  params:
+    - name: limit
+      value: ""
+      type: query
+    - name: next
+      value: ""
+      type: query
+    - name: search
+      value: ""
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
