@@ -1,0 +1,20 @@
+info:
+  name: support tikets message
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{base_url}}/v1/client/support-tickets/581d930f-97b6-4d55-acd3-4b2f48680246/messages"
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{token_client}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
