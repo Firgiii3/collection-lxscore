@@ -5,10 +5,10 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}/v1/add-test?test=testing"
+  url: "{{base_url}}/v1/add-test?test=testing ep"
   params:
     - name: test
-      value: testing
+      value: testing ep
       type: query
   auth: inherit
 
