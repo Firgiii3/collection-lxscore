@@ -5,20 +5,17 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}/v1/internal/match-request"
+  url: "{{base_url}}/v1/internal/match-request?status=&next=&limit="
   params:
     - name: status
       value: ""
       type: query
-      disabled: true
     - name: next
       value: ""
       type: query
-      disabled: true
     - name: limit
       value: ""
       type: query
-      disabled: true
   auth:
     type: bearer
     token: "{{internal_token}}"
