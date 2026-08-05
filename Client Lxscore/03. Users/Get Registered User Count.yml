@@ -6,7 +6,9 @@ info:
 http:
   method: GET
   url: "{{base_url}}/v1/internal/registered"
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{client_token}}"
 
 settings:
   encodeUrl: true

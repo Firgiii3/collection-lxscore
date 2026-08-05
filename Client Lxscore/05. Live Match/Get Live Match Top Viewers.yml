@@ -5,11 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}/v1/client/live-match/{matchId}/top-viewer?matchId="
-  params:
-    - name: matchId
-      value: ""
-      type: query
+  url: "{{base_url}}/v1/client/live-match/{matchId}/top-viewer"
   auth: inherit
 
 settings:

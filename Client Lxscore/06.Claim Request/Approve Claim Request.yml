@@ -5,12 +5,15 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}/v1/client/claim-rewards/{claimId}/approve?claimId="
+  url: "{{base_url}}/v1/client/claim-rewards/{claimId}/approve"
   params:
     - name: claimId
       value: ""
       type: query
-  auth: inherit
+      disabled: true
+  auth:
+    type: bearer
+    token: "{{client_token}}"
 
 settings:
   encodeUrl: true

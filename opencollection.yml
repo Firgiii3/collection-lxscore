@@ -26,6 +26,8 @@ request:
       value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0aW5nc2FuaXR5MUBnbWFpbC5jb20iLCJhdWQiOlsiTGl2ZXNwb3J0IFB1YmxpYyIsImRjMjcwMWJjLTQ5Y2MtNDcxMS04MzU3LWE2OTQzMmEwZDE3NiJdLCJleHAiOjE3ODY2MTI1OTMsIm5iZiI6MTc4NDAyMDU5MywiaWF0IjoxNzg0MDIwNTkzLCJqdGkiOiI2NTdkYTc4ZC1lOTdhLTQ3NTQtYWFkMS04MDczNzViMWI3YzcifQ.CxUxdZZXqu-ZDfr8y9akICXmde7EJaYKG0G1GZNeuFU
     - name: client_token
       value: ""
+    - name: internal_token
+      value: ""
 
 docs:
   content: |-

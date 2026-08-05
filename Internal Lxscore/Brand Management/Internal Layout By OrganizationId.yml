@@ -5,12 +5,14 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}/v1/internal/layout?organization_id="
+  url: "{{base_url}}/v1/internal/layout?organization_id={{organization_id}}"
   params:
     - name: organization_id
-      value: ""
+      value: "{{organization_id}}"
       type: query
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{internal_token}}"
 
 settings:
   encodeUrl: true

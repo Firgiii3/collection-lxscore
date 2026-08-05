@@ -6,7 +6,9 @@ info:
 http:
   method: GET
   url: "{{base_url}}/v1/internal/match-request/{id}"
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{internal_token}}"
 
 settings:
   encodeUrl: true

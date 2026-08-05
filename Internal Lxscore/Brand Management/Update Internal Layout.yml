@@ -19,7 +19,9 @@ http:
         width: number
         height: number
       }
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{internal_token}}"
 
 settings:
   encodeUrl: true

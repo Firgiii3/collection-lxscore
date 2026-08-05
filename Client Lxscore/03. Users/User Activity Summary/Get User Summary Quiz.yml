@@ -6,7 +6,9 @@ info:
 http:
   method: GET
   url: "{{base_url}}/v1/client/users/{publicUserId}/quiz"
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{client_token}}"
 
 settings:
   encodeUrl: true

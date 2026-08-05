@@ -30,7 +30,9 @@ http:
         "max_point_watching_time": 0,
         "new_user_max_point_watching_time": 0
       }
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{client_token}}"
 
 settings:
   encodeUrl: true

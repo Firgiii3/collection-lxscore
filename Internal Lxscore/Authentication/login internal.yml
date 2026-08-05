@@ -1,0 +1,46 @@
+info:
+  name: login internal
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/v1/internal/auth/login"
+  headers:
+    - name: X-Organization
+      value: "{{organization_id}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"email\": \"manager@livesport.com\",\r
+
+      \    \"password\": \"test\"\r
+
+      }"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        test("Login Internal success", function () {
+            expect(res.getStatus()).to.equal(200);
+        });
+
+        const jsonData = res.getBody();
+
+        const internalToken =
+            jsonData.data?.access_token ||
+            jsonData.data?.token ||
+            jsonData.token;
+
+        expect(internalToken, "Internal token tidak ditemukan").to.exist;
+
+        bru.setVar("internal_token", internalToken);
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

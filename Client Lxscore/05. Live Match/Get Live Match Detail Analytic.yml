@@ -5,12 +5,10 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}/v1/client/live-match/{matchId}/analytic?matchId="
-  params:
-    - name: matchId
-      value: ""
-      type: query
-  auth: inherit
+  url: "{{base_url}}/v1/client/live-match/{matchId}/analytic"
+  auth:
+    type: bearer
+    token: "{{client_token}}"
 
 settings:
   encodeUrl: true

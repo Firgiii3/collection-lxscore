@@ -12,7 +12,9 @@ http:
       {
         "file": "image.jpg"
       }
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{internal_token}}"
 
 settings:
   encodeUrl: true

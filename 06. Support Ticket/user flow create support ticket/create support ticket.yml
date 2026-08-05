@@ -29,7 +29,9 @@ http:
       \  \"reference_ticket_id\": \"9a72c5f5-6e3a-43a3-8e96-40a8c35c4e91\"\r
 
       }"
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{user_token}}"
 
 settings:
   encodeUrl: true

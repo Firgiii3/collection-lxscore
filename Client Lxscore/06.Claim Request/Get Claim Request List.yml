@@ -5,36 +5,47 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}/v1/client/claim-rewards?status=&next=&limit=&search=&brand_id=&sort_by=&sort_direction=&start_date=&end_date="
+  url: "{{base_url}}/v1/client/claim-rewards"
   params:
     - name: status
       value: ""
       type: query
+      disabled: true
     - name: next
       value: ""
       type: query
+      disabled: true
     - name: limit
       value: ""
       type: query
+      disabled: true
     - name: search
       value: ""
       type: query
+      disabled: true
     - name: brand_id
       value: ""
       type: query
+      disabled: true
     - name: sort_by
       value: ""
       type: query
+      disabled: true
     - name: sort_direction
       value: ""
       type: query
+      disabled: true
     - name: start_date
       value: ""
       type: query
+      disabled: true
     - name: end_date
       value: ""
       type: query
-  auth: inherit
+      disabled: true
+  auth:
+    type: bearer
+    token: "{{client_token}}"
 
 settings:
   encodeUrl: true

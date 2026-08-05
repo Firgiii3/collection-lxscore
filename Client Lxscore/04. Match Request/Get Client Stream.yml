@@ -5,13 +5,13 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}/v1/client/stream?page=&limit=&start_time=&end_time=&match="
+  url: "{{base_url}}/v1/client/stream?page=1&limit=1&start_time=&end_time=&match="
   params:
     - name: page
-      value: ""
+      value: "1"
       type: query
     - name: limit
-      value: ""
+      value: "1"
       type: query
     - name: start_time
       value: ""
@@ -22,7 +22,9 @@ http:
     - name: match
       value: ""
       type: query
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{client_token}}"
 
 settings:
   encodeUrl: true

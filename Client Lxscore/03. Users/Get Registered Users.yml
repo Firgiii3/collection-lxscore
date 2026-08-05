@@ -25,7 +25,9 @@ http:
     - name: page
       value: ""
       type: query
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{client_token}}"
 
 settings:
   encodeUrl: true

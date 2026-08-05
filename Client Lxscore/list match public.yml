@@ -12,7 +12,9 @@ http:
       {
           "organization_id": "dc2701bc-49cc-4711-8357-a69432a0d176"
       }
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{client_token}}"
 
 settings:
   encodeUrl: true

@@ -6,7 +6,9 @@ info:
 http:
   method: PUT
   url: "{{base_url}}/v1/internal/support-tickets/{id}/close"
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{internal_token}}"
 
 settings:
   encodeUrl: true

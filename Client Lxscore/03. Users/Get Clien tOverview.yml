@@ -13,7 +13,9 @@ http:
     - name: end_date
       value: ""
       type: query
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{client_token}}"
 
 settings:
   encodeUrl: true

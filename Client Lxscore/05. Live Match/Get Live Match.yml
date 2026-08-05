@@ -5,18 +5,20 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}/v1/client/live-match?next=&limit=&status="
+  url: "{{base_url}}/v1/client/live-match?next=1&limit=1&status=all"
   params:
     - name: next
-      value: ""
+      value: "1"
       type: query
     - name: limit
-      value: ""
+      value: "1"
       type: query
     - name: status
-      value: ""
+      value: all
       type: query
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{client_token}}"
 
 settings:
   encodeUrl: true

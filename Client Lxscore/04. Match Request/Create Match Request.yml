@@ -10,12 +10,14 @@ http:
     type: json
     data: |-
       {
-        "organization_id": 1234-1,
-        "match": array,
-        "match_id": string,
-        "mrketing_boost" boolean,
-        }
-  auth: inherit
+        "organization_id": "1234-1",
+        "match": [],
+        "match_id": "string",
+        "mrketing_boost": true
+      }
+  auth:
+    type: bearer
+    token: "{{client_token}}"
 
 settings:
   encodeUrl: true
